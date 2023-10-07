@@ -1,0 +1,294 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root{
+    /* COLORS */
+    /* Background */
+    --VeryLightLavender: hsl(240, 100%, 98%);
+    /* Toggle Button + Buttons + Background */
+    --LightGradientColor: hsl(236, 72%, 79%);
+    --DarkGradientColor: hsl(237, 63%, 64%);
+    --LinearGradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+    /* Toggle Button + Professional Bundle */
+    --VeryLightGrayishBlue: hsl(240, 78%, 98%);
+    /* Annual and Monthly */
+    --LightGrayishBlue: hsl(234, 14%, 74%);
+    /* Main header + Subscription header + Services */
+    --GrayishBlue: hsl(233, 13%, 49%);
+    /* Price */
+    --DarkGrayishBlue: hsl(232, 13%, 33%);
+
+    /* FONT SIZE */
+    --MainHeader: 1.7rem;
+    --Toggle: 1rem;
+    --BundleTitle: 1rem;
+    --Price: 3.5rem;
+    --ServiceListAndBtns: 0.8rem;
+    --DollarBill: 2rem;
+}
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 15px;
+    /* overflow: hidden; */
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    background-image: url("./images/bg-top.svg"), url("./images/bg-bottom.svg");
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+    background-color: var(--VeryLightLavender);
+    /* overflow: hidden; */
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+hr{
+    display: block;
+    max-width: 100%;
+}
+
+/* Font styles */
+.payment--accent{
+    color: var(--LightGrayishBlue);
+    font-size: var(--ServiceListAndBtns);
+}
+
+.subscription-offer--accent{
+    font-size: var(--ServiceListAndBtns);
+    letter-spacing: 1px;
+}
+
+.header-accent, .subscription-offer--accent{
+    color: var(--GrayishBlue);
+}
+
+.price--accent{
+    color: var(--DarkGrayishBlue);
+    font-size: var(--Price);
+}
+
+.dollar--accent{
+    font-size: var(--DollarBill);
+    margin-right: 0.5rem;
+}
+
+.btn--accent, .pro-btn--accent{
+    font-size: var(--ServiceListAndBtns);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn--accent{
+    background-image: linear-gradient(to right, var(--LightGradientColor), var(--DarkGradientColor));
+    color: var(--VeryLightGrayishBlue);
+}
+
+.pro-btn--accent{
+    background-color: var(--VeryLightGrayishBlue);
+    color: var(--DarkGradientColor);
+}
+
+
+.btn--accent:hover{
+    background-image: none;
+    background-color: var(--VeryLightGrayishBlue);
+    border: 1px solid var(--DarkGradientColor);
+    color: var(--DarkGradientColor);
+}
+
+.pro-btn--accent:hover{
+    background-color: transparent;
+    border: 1px solid var(--VeryLightGrayishBlue);
+    color:var(--VeryLightGrayishBlue);
+}
+
+.sr-only{
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    width:1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: no-wrap;
+    position: absolute; 
+    left: -1000px;
+}
+
+/* Header */
+#payment-container-header{
+    font-size: var(--MainHeader);
+}
+
+/* Subscription */
+#subscriptions{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1rem 1fr 1rem;
+}
+
+.subscription{
+    padding: 2em 4em;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.subscription:nth-child(1){
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.subscription:nth-child(2){
+    grid-column: 2/3;
+    grid-row: 1/4;
+}
+
+.subscription:nth-child(3){
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.pro-subscription{
+    background-image: linear-gradient(to bottom right, var(--LightGradientColor), var(--DarkGradientColor));
+    padding: 3em 4em;
+}
+
+.pro-subscription .header-accent, .pro-subscription .monthly-price, .pro-subscription .annual-price,.pro-subscription .subscription-offer--accent{
+    color: var(--VeryLightGrayishBlue);
+}
+
+.subscription-header{
+    font-size: var(--BundleTitle);
+    margin-bottom: 1.5em;
+}
+
+.subscription-offers{
+    padding: 2em 0;
+}
+
+.subscription-offer{
+    padding: 1.2em 0;
+}
+
+.subscription-price{
+    width: 13rem;
+}
+
+.monthly-price, .annual-price{
+    display: flex;
+    align-items: center;
+}
+
+.hide{
+    display: none;
+}
+
+.btn{
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding: 0.5em 0;
+    border-radius: 5px;
+    margin: 0 auto;
+    transition: all 0.4s ease;
+}
+
+/* Toggle Slider */
+#payments{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    width: 300px;
+    margin: 3em auto 5em;
+}
+
+.toggle{
+    display: inline-block;
+    position: relative;
+    width: 45px;
+    height: 25px;
+    background-color: var(--DarkGradientColor);
+    border-radius: 200px;
+    cursor: pointer;
+    transition: right 0.4s ease;
+}
+
+.toggle input{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.toggle-btn--circle{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50%;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-color: var(--VeryLightGrayishBlue);
+    border-radius: 50%;
+    transition: right 0.4s ease;
+}
+
+.toggle-btn--circle.active{
+    right: 3px;
+}
+
+.toggle.active{
+    background-color: var(--LightGradientColor);
+}
+
+/* Media Query */
+@media screen and (max-width: 1024px) {
+    #payments{
+        justify-content: center;
+    }
+
+    #subscriptions{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .subscription{
+        padding: 2em 4em;
+        width: 95%;
+    }
+
+    .subscription-price{
+        width: 14rem;
+    }
+}
+
+/* Attribution */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin-top: 3rem;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
